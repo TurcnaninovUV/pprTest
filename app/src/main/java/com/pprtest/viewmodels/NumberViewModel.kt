@@ -17,12 +17,11 @@ class NumberViewModel @Inject constructor(
     val simpleData = repository.simpleNumbersLiveData
     val fibonacciData = repository.fibonacciNumberLiveData
 
-
-    fun loadNumbers() = viewModelScope.launch {
+    fun loadListSimpleNumbers() = viewModelScope.launch {
         repository.loadNumbers()
     }
 
-    fun loadNumbersFibonacci() = viewModelScope.launch {
+    fun loadListNumbersFibonacci() = viewModelScope.launch {
         repository.loadNumbersFibonacci()
     }
 

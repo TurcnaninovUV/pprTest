@@ -1,6 +1,6 @@
 package com.pprtest.adapter
 
-import android.annotation.SuppressLint
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -10,8 +10,8 @@ import com.pprtest.R
 import com.pprtest.databinding.CardNumberBinding
 import com.pprtest.dto.NumberItem
 
-class NumberAdapter :
-    ListAdapter<NumberItem, NumberViewHolder>(DiffCallback) {
+class NumberAdapter : ListAdapter<NumberItem, NumberViewHolder>(DiffCallback) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumberViewHolder {
         val binding = CardNumberBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return NumberViewHolder(binding)
@@ -27,25 +27,25 @@ class NumberAdapter :
 class NumberViewHolder(
     private val binding: CardNumberBinding
 ) : RecyclerView.ViewHolder(binding.root) {
-    @SuppressLint("ResourceAsColor", "SetTextI18n")
     fun bind(numberItem: NumberItem) {
         binding.apply {
             numberText.text = numberItem.number.toString()
-            if (numberItem.whiteColorNumber) numberText.setBackgroundColor(R.color.colorWhite)
-            else numberText.setBackgroundColor(R.color.colorWhite)
+            if (numberItem.whiteColorNumber) numberText.setBackgroundResource(R.color.white)
+            else numberText.setBackgroundResource(R.color.colorWhiteGrey)
 
         }
     }
 
 }
-    object DiffCallback : DiffUtil.ItemCallback<NumberItem>() {
-        override fun areItemsTheSame(oldItem: NumberItem, newItem: NumberItem): Boolean {
-            return oldItem.number == newItem.number
-        }
 
-        override fun areContentsTheSame(oldItem: NumberItem, newItem: NumberItem): Boolean {
-            return oldItem == newItem
-        }
+object DiffCallback : DiffUtil.ItemCallback<NumberItem>() {
+    override fun areItemsTheSame(oldItem: NumberItem, newItem: NumberItem): Boolean {
+        return oldItem.number == newItem.number
     }
+
+    override fun areContentsTheSame(oldItem: NumberItem, newItem: NumberItem): Boolean {
+        return oldItem == newItem
+    }
+}
 
 

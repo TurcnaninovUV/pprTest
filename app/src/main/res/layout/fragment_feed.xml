@@ -4,51 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     android:orientation="vertical">
 
-
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:id="@+id/container"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
-    <!--        tools:listitem="@layout/card_number" />-->
-
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/finobacci"
-            android:layout_width="wrap_content"
+            android:id="@+id/fibonacci"
+            android:layout_width="@dimen/layout_width"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/layout_margin"
+            android:layout_marginTop="@dimen/layout_margin"
+            android:layout_marginBottom="@dimen/layout_margin"
             android:layout_weight="1"
-            android:text="finobacci" />
+            android:text="@string/fibonacci_numbers"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/simple"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/layout_width"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/layout_margin"
             android:layout_weight="1"
-            android:text="simple" />
-    </LinearLayout>
+            android:text="@string/simple_numbers"
+            app:layout_constraintBottom_toBottomOf="@+id/fibonacci"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fibonacci" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <FrameLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/card_number"/>
-    </FrameLayout>
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/card_number" />
 
 
 </LinearLayout>
