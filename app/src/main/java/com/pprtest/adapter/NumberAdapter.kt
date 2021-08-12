@@ -3,6 +3,7 @@ package com.pprtest.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -25,14 +26,14 @@ class NumberAdapter : ListAdapter<NumberItem, NumberViewHolder>(DiffCallback) {
 
 
 class NumberViewHolder(
-    private val binding: CardNumberBinding
+        private val binding: CardNumberBinding
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(numberItem: NumberItem) {
         binding.apply {
             numberText.text = numberItem.number.toString()
+            numberText.setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM)
             if (numberItem.whiteColorNumber) numberText.setBackgroundResource(R.color.white)
             else numberText.setBackgroundResource(R.color.colorWhiteGrey)
-
         }
     }
 

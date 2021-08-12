@@ -6,36 +6,41 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/fibonacci"
-            android:layout_width="@dimen/layout_width"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height"
             android:layout_marginStart="@dimen/layout_margin"
-            android:layout_marginTop="@dimen/layout_margin"
-            android:layout_marginBottom="@dimen/layout_margin"
-            android:layout_weight="1"
-            android:text="@string/fibonacci_numbers"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="@dimen/padding_item"
+            android:layout_marginEnd="@dimen/layout_margin"
+            android:text="@string/fibonacci_numbers" />
 
         <Button
             android:id="@+id/simple"
-            android:layout_width="@dimen/layout_width"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height"
+            android:layout_marginStart="@dimen/layout_margin"
+            android:layout_marginTop="@dimen/padding_item"
             android:layout_marginEnd="@dimen/layout_margin"
-            android:layout_weight="1"
-            android:text="@string/simple_numbers"
-            app:layout_constraintBottom_toBottomOf="@+id/fibonacci"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/fibonacci" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="@string/simple_numbers" />
+
+        <Button
+            android:id="@+id/threeColumns"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_height"
+            android:layout_marginStart="@dimen/layout_margin"
+            android:layout_marginTop="@dimen/padding_item"
+            android:layout_marginEnd="@dimen/layout_margin"
+            android:layout_marginBottom="@dimen/padding_item"
+            android:text="@string/three_columns" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/container"
@@ -43,7 +48,6 @@
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/card_number" />
-
 
 </LinearLayout>
 

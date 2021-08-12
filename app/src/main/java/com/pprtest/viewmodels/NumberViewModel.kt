@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NumberViewModel @Inject constructor(
-    private val repository: WorkRepository
+        private val repository: WorkRepository
 ) : ViewModel() {
 
     val simpleData = repository.simpleNumbersLiveData
@@ -25,5 +25,8 @@ class NumberViewModel @Inject constructor(
         repository.loadNumbersFibonacci()
     }
 
+    fun threeOrTwoColumnsList(flagThreeColumns: Boolean) = viewModelScope.launch {
+        repository.treeOrTwoColumnsList(flagThreeColumns)
+    }
 
 }

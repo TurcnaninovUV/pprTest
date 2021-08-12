@@ -9,9 +9,13 @@
         android:id="@+id/numberText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:autoSizeMinTextSize="@dimen/size_min_number"
+        android:autoSizeStepGranularity="@dimen/step_of_size_number"
+        android:autoSizeTextType="uniform"
         android:gravity="center"
         android:maxLines="1"
         android:padding="@dimen/padding_item"
+        android:textSize="@dimen/size_max_number"
         tools:text="12" />
 
 </LinearLayout>

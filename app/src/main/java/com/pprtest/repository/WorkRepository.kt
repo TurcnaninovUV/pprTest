@@ -10,5 +10,6 @@ interface WorkRepository {
 
     suspend fun loadNumbers()
     suspend fun loadNumbersFibonacci()
+    suspend fun treeOrTwoColumnsList(flagThreeColumns: Boolean)
 
 }

@@ -4,5 +4,5 @@ import java.math.BigInteger
 
 data class NumberItem(
         val number: BigInteger,
-        val whiteColorNumber: Boolean = true
+        var whiteColorNumber: Boolean = true
 )

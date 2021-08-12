@@ -2,8 +2,11 @@
 <resources>
     <dimen name="number_text_size">30sp</dimen>
     <dimen name="size_icon">200dp</dimen>
-    <dimen name="layout_width">150dp</dimen>
+    <dimen name="layout_height">50dp</dimen>
     <dimen name="layout_margin">25dp</dimen>
-
+    <dimen name="size_max_number">48sp</dimen>
+    <dimen name="size_min_number">3sp</dimen>
+    <dimen name="step_of_size_number">2sp</dimen>
+    <dimen name="padding_item">5dp</dimen>
 
 </resources>
